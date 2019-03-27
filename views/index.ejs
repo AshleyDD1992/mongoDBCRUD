@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+</head>
+<body>
+  <h1><center>Daily chores list</center></h1>
+  <h2><center><p id="todaysDate"></center></p>
+
+    <script>
+    var d = new Date();
+    document.getElementById("todaysDate").innerHTML = d.toDateString();
+    </script></h2>
+
+  <ul class="quotes">
+  <% for(var i=0; i<quotes.length; i++) {%>
+    <li class="quote">
+      <span><%= quotes[i].name %></span>
+      <span><%= quotes[i].quote %></span>
+    </li>
+  <% } %>
+  </ul>
+
+  <h3><center>Add a quote</center></h3>
+
+  <form action="/quotes" method="POST"><center>
+    <input type="text" placeholder="Name" name="name">
+    <input type="text" placeholder="Task" name="quote">
+    <button type="submit">Submit</button></center>
+  </form>
+
+  <div><center>
+    <h2>Once completed click here</h2>
+    <button id="update"> Darth Vadar invades! </button></center>
+  </div>
+
+  <div><center>
+    <h2>Delete Darth Vadar's first quote</h2>
+    <button id="delete"> Delete first Darth Vadar quote </button></center>
+  </div>
+
+  <script src="main.js"></script>
+
+</body>
+</html>
